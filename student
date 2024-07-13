@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class StudentGrade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the marks for subject 1: ");
+        int marks1 = scanner.nextInt();
+        System.out.print("Enter the marks for subject 2: ");
+        int marks2 = scanner.nextInt();
+        System.out.print("Enter the marks for subject 3: ");
+        int marks3 = scanner.nextInt();
+        System.out.print("Enter the marks for subject 4: ");
+        int marks4 = scanner.nextInt();
+        int total = marks1 + marks2 + marks3 + marks4;
+        double aggregate = (double) total / 4;
+        String grade;
+        if (aggregate > 75) {
+            grade = "Distinction";
+        } else if (aggregate >= 60) {
+            grade = "First Division";
+        } else if (aggregate >= 50) {
+            grade = "Second Division";
+        } else if (aggregate >= 40) {
+            grade = "Third Division";
+        } else {
+            grade = "Fail";
+        }
+        System.out.println("Total marks: " + total);
+        System.out.println("Aggregate: " + aggregate);
+        System.out.println("Grade: " + grade);
+        scanner.close();
+    }
+}
