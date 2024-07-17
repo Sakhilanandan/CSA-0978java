@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class FibonacciRunnable implements Runnable {
+    private int count;
+
+    public FibonacciRunnable(int count) {
+        this.count = count;
+    }
+
+    @Override
+    public void run() {
+        int num1 = 0, num2 = 1;
+        System.out.print("Fibonacci Series: " + num1 + " " + num2);
+
+        for (int i = 2; i < count; i++) {
+            int nextNum = num1 + num2;
+            System.out.print(" " + nextNum);
+            num1 = num2;
+            num2 = nextNum;
+        }
+        System.out.println();
+    }
+}
+
+public class FibonacciThread {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of Fibonacci terms: ");
+        int count = scanner.nextInt();
+
+        FibonacciRunnable fibonacciRunnable = new FibonacciRunnable(count);
+        Thread thread = new Thread(fibonacciRunnable);
+        thread.start();
+    }
+}
