@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class Student {
+    int sub1, sub2, sub3, sub4, sub5, sub6;
+
+    Student(int s1, int s2, int s3, int s4, int s5, int s6) {
+        sub1 = s1;
+        sub2 = s2;
+        sub3 = s3;
+        sub4 = s4;
+        sub5 = s5;
+        sub6 = s6;
+    }
+}
+
+class Calc extends Student {
+
+    Calc(int s1, int s2, int s3, int s4, int s5, int s6) {
+        super(s1, s2, s3, s4, s5, s6);
+    }
+
+    public void calculate() {
+        int avg = (sub1 + sub2 + sub3 + sub4 + sub5 + sub6) / 6;
+        if (avg >= 75) {
+            System.out.println("Distinction");
+        } else if (avg >= 60) {
+            System.out.println("First Division");
+        } else if (avg >= 50) {
+            System.out.println("Second Division");
+        } else if (avg >= 40) {
+            System.out.println("Third Division");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter marks for subject 1: ");
+        int s1 = scanner.nextInt();
+        System.out.print("Enter marks for subject 2: ");
+        int s2 = scanner.nextInt();
+        System.out.print("Enter marks for subject 3: ");
+        int s3 = scanner.nextInt();
+        System.out.print("Enter marks for subject 4: ");
+        int s4 = scanner.nextInt();
+        System.out.print("Enter marks for subject 5: ");
+        int s5 = scanner.nextInt();
+        System.out.print("Enter marks for subject 6: ");
+        int s6 = scanner.nextInt();
+
+        Calc obj = new Calc(s1, s2, s3, s4, s5, s6);
+        obj.calculate();
+        scanner.close();
+    }
+}
+19
