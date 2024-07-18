@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class Tax {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your income: ");
+        double income = scanner.nextDouble();
+        double tax = 0;
+
+        if (income <= 250000) {
+            System.out.println("No TAX!!!");
+        } else if (income > 250000 && income <= 500000) {
+            tax = income * 0.10;
+            System.out.println("Tax = " + tax);
+        } else if (income > 500000 && income <= 1000000) {
+            tax = income * 0.30;
+            System.out.println("Tax = " + tax);
+        } else {
+            tax = income * 0.30; // assuming this for income > 1000000
+            System.out.println("Tax = " + tax);
+        }
+
+        scanner.close();
+    }
+}
