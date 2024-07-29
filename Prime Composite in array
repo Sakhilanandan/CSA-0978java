@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class PrimeComposite{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = input.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = input.nextInt();
+        }
+        int com = 0, pri = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int c = 0;
+            for (int j = 1; j < arr[i]; j++) {
+                if (arr[i] % j == 0) {
+                    c++;
+                }
+            }
+            if (c > 1) {
+                com++;
+            } else {
+                pri++;
+            }
+        }
+        System.out.print("Composite Number: " + com);
+        System.out.println("\nPrime Number: " + pri);
+        input.close();
+    }
+}
