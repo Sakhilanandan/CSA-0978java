@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class PerfectNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of perfect numbers to find: ");
+        int n = input.nextInt();
+        int sum, temp = 0;
+        int count = 0; 
+        for (int j = 2; count < n; j++) {
+            sum = 0;
+            for (int i = 1; i <= j / 2; i++) {
+                if (j % i == 0) {
+                    sum += i;
+                }
+            }
+            if (sum == j) {
+                System.out.print(j + " ");
+                count++;
+            }
+        }
+        input.close();
+    }
+}
