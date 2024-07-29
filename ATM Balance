@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class ATMBalance {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //System.out.print("Enter the count of 500 denomination notes: ");
+        int n1 = scanner.nextInt();
+        //System.out.print("Enter the denomination for the first type (500): ");
+        int d1 = scanner.nextInt();
+        //System.out.print("Enter the count of 100 denomination notes: ");
+        int n2 = scanner.nextInt();
+        //System.out.print("Enter the denomination for the second type (100): ");
+        int d2 = scanner.nextInt();
+        //System.out.print("Enter the count of 200 denomination notes: ");
+        int n3 = scanner.nextInt();
+        //System.out.print("Enter the denomination for the third type (200): ");
+        int d3 = scanner.nextInt();
+       // System.out.print("Enter the count of 2000 denomination notes: ");
+        int n4 = scanner.nextInt();
+       // System.out.print("Enter the denomination for the fourth type (2000): ");
+        int d4 = scanner.nextInt();
+        int total = (n1 * d1) + (n2 * d2) + (n3 * d3) + (n4 * d4);
+        System.out.println("Total Available Balance in ATM: " + total);
+        scanner.close();
+    }
+}
