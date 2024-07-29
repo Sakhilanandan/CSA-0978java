@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class ransom {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //System.out.print("Enter the ransom note string: ");
+        String a = scanner.nextLine();
+       // System.out.print("Enter the magazine string: ");
+        String b = scanner.nextLine();
+        int fin = 1;
+        for (int i = 0; i < a.length(); i++) {
+            char ch = a.charAt(i);
+            int rancoun = 0;
+            int magcoun = 0;
+            for (int j = 0; j < a.length(); j++) {
+                if (a.charAt(j) == ch) {
+                    rancoun++;
+                }
+            }
+            for (int k = 0; k < b.length(); k++) {
+                if (b.charAt(k) == ch) {
+                    magcoun++;
+                }
+            }
+            if (magcoun < rancoun) {
+                fin = 0;
+                break;
+            }
+        }
+        if (fin != 0) {
+            System.out.print(true);
+        } else {
+            System.out.print(false);
+        }
+        scanner.close();
+    }
+}
