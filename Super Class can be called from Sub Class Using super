@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class SuperClass {
+    int value;
+    SuperClass(int value) {
+        this.value = value;
+    }
+    void display() {
+        System.out.println("SuperClass value: " + value);
+    }
+}
+class SubClass extends SuperClass {
+    int value;
+    SubClass(int value1, int value2) {
+        super(value1); 
+        this.value = value2;
+    }
+    void display() {
+        System.out.println("SuperClass value: " + super.value);
+        System.out.println("SubClass value: " + value);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter value for SuperClass: ");
+        int value1 = scanner.nextInt();
+        System.out.print("Enter value for SubClass: ");
+        int value2 = scanner.nextInt();
+        SubClass obj = new SubClass(value1, value2);
+        obj.display();
+        scanner.close();
+    }
+}
